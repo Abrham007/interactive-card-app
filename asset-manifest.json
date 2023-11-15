@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/interactive-card-app/static/js/main.c58627ce.js",
+    "index.html": "/interactive-card-app/index.html",
+    "main.c58627ce.js.map": "/interactive-card-app/static/js/main.c58627ce.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c58627ce.js"
+  ]
+}
