@@ -10,10 +10,6 @@
 }
 
 .text-XS {
-  color: var(--Deep-Violet);
-  font-feature-settings: "clig" off, "liga" off;
-  /* Body (M) */
-  font-family: Space Grotesk;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -21,11 +17,6 @@
 }
 
 .text-S {
-  color: var(--White);
-  text-align: right;
-  font-feature-settings: "clig" off, "liga" off;
-  /* Body (L) */
-  font-family: Space Grotesk;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -33,19 +24,11 @@
 }
 
 .text-M {
-  color: var(--Deep-Violet);
-  font-feature-settings: "clig" off, "liga" off;
-  /* Heading (L) */
-  font-family: Space Grotesk;
   font-size: 18px;
   font-weight: 500;
 }
 
 .text-L {
-  color: var(--White, #fff);
-  font-feature-settings: "clig" off, "liga" off;
-  /* Heading (XL) */
-  font-family: Space Grotesk;
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 3.422px;
@@ -54,19 +37,41 @@
 .page {
   min-height: 100vh;
   min-width: 100vw;
-  background: url(../images/bg-main-desktop.png) no-repeat 0 0/483px 100%;
+  background-image: url(../images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 483px 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+@media screen and (max-width: 1100px) {
+  .page {
+    background-size: 100% 527px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .page {
+    background-image: url(../images/bg-main-mobile.png);
+    background-size: 100% 240px;
+    align-items: flex-start;
+    padding: 32px;
+  }
 }
 
 .main {
   display: flex;
-  flex-direction: row;
   gap: 127px;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 1100px) {
+  .main {
+    flex-direction: column;
+    gap: 48px;
+  }
 }
 
 .card-box {
@@ -76,24 +81,67 @@
   flex-direction: column;
   gap: 37px;
 }
+@media screen and (max-width: 600px) {
+  .card-box {
+    width: 343px;
+    height: 251px;
+    position: relative;
+  }
+}
 
 .card-front {
   width: 447px;
   height: 245px;
   background-image: url(../images/bg-card-front.png);
+  background-size: 100% 100%;
   padding: 28px 32px;
   display: flex;
   flex-direction: column;
   gap: 25px;
+}
+@media screen and (max-width: 600px) {
+  .card-front {
+    gap: 17px;
+    width: 285px;
+    height: 157px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 19px 17px;
+  }
 }
 .card-front__logo {
   width: 84px;
   height: 47px;
   margin-bottom: auto;
 }
+@media screen and (max-width: 600px) {
+  .card-front__logo {
+    width: 54px;
+    height: 30px;
+  }
+}
 .card-front__info {
   display: flex;
   justify-content: space-between;
+}
+.card-front__num {
+  color: var(--White, #fff);
+  font-feature-settings: "clig" off, "liga" off;
+}
+@media screen and (max-width: 600px) {
+  .card-front__num {
+    font-size: 18px;
+    letter-spacing: 2.2px;
+  }
+}
+.card-front__name, .card-front__date {
+  color: var(--White);
+  text-align: right;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 9px;
+  letter-spacing: 1.286px;
 }
 
 .card-back {
@@ -101,10 +149,26 @@
   width: 447px;
   height: 245px;
   background-image: url(../images/bg-card-back.png);
+  background-size: 100% 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0px 57px;
+}
+@media screen and (max-width: 600px) {
+  .card-back {
+    width: 285px;
+    height: 157px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px 37px;
+  }
+}
+.card-back__cvc {
+  color: var(--White);
+  text-align: right;
+  font-feature-settings: "clig" off, "liga" off;
 }
 
 .card-form {
@@ -115,6 +179,12 @@
   justify-content: center;
   gap: 25px;
 }
+@media screen and (max-width: 600px) {
+  .card-form {
+    width: 327px;
+    height: 328px;
+  }
+}
 .card-form__item {
   display: flex;
   width: 100%;
@@ -122,6 +192,10 @@
   justify-content: center;
   align-items: flex-start;
   gap: 9px;
+}
+.card-form__label {
+  color: var(--Deep-Violet);
+  font-feature-settings: "clig" off, "liga" off;
 }
 .card-form__item-box {
   width: 100%;
@@ -136,21 +210,55 @@
   margin-top: auto;
 }
 
+.card-valid {
+  width: 381px;
+  height: 291px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .card-valid {
+    width: 327px;
+    height: 328px;
+  }
+}
+.card-valid__img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+.card-valid__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.card-valid__heading {
+  color: var(--Deep-Violet);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+}
+.card-valid__info {
+  color: var(--Purplish-Grey, #8f8694);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+}
+
 .input {
   width: 100%;
   padding: 11px 16px;
   border-radius: 8px;
   border: 1px solid var(--Light-Grey, #dfdee0);
   background: var(--White);
+  color: var(--Deep-Violet);
+  font-feature-settings: "clig" off, "liga" off;
 }
 .input:focus, .input:hover {
   cursor: pointer;
   outline: none;
   border: 1px solid var(--Gradient, #6348fe);
-}
-
-:invalid {
-  border: 5px solid var(--Red, #ff5050);
 }
 
 .btn {
@@ -165,6 +273,7 @@
   font-feature-settings: "clig" off, "liga" off;
   font-size: 18px;
   font-weight: 500;
+  border: none;
 }
 .btn:hover {
   cursor: pointer;
