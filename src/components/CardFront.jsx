@@ -1,16 +1,19 @@
 import React from "react";
 
-function CardFront() {
+function CardFront(props) {
   return (
     <div className="card-front">
       <img
         className="card-front__logo"
         src="./assets/images/card-logo.svg"
       ></img>
-      <p className="card-front__num text-L">0000 0000 0000 0000</p>
+      <p className="card-front__num text-L">{props.cardInfo.cardNumber}</p>
       <div className="card-front__info">
-        <p className="card-front__name text-S">Jane Appleseed</p>
-        <p className="card-front__date text-S">00/00</p>
+        <p className="card-front__name text-S">{props.cardInfo.name}</p>
+        <p className="card-front__date text-S">
+          <span>{props.cardInfo.expireMonth}</span>/
+          <span>{props.cardInfo.expireYear}</span>
+        </p>
       </div>
     </div>
   );
