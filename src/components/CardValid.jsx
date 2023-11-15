@@ -6,7 +6,7 @@ function CardValid(props) {
       <img
         className="card-valid__img"
         src="./assets/images/icon-complete.svg"
-        role="prestation"
+        alt=""
       ></img>
       <div className="card-valid__text">
         <h1 className="card-valid__heading text-L">Thank you!</h1>

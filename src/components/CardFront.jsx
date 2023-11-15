@@ -6,6 +6,7 @@ function CardFront(props) {
       <img
         className="card-front__logo"
         src="./assets/images/card-logo.svg"
+        alt=""
       ></img>
       <p className="card-front__num text-L">{props.cardInfo.cardNumber}</p>
       <div className="card-front__info">
