@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL](https://github.com/Abrham007/interactive-card-details-app.git)
-- Live Site URL: [live site URL](https://abrham007.github.io/interactive-card-details-app/)
+- Solution URL: [solution URL](https://github.com/Abrham007/interactive-card-app.git)
+- Live Site URL: [live site URL](https://abrham007.github.io/interactive-card-app/)
 
 ## My process
 
